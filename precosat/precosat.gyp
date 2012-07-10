@@ -53,9 +53,9 @@
       ],
       'conditions': [
         ['check_with_picosat==1', {
-          'defines': {
+          'defines': [
             'CHECKWITHPICOSAT',
-          },
+          ],
           'dependencies': [
             '../picosat/picosat.gyp:libpicosat',
           ],
