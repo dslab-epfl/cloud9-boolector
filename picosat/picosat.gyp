@@ -33,8 +33,8 @@
   'variables': {
     # TODO(bucur): The names here look generic.  Are these global vars?
     'log%': 0,
-    'stats%': 0,
-    'trace%': 0,
+    'stats%': 1,
+    'trace%': 1,
     'version': 936,
     # TODO(bucur): Import the other options from the configure script
   },
@@ -59,6 +59,8 @@
     'cflags': [
       '-Wall',
       '-Wextra',
+      '-fPIC',
+      '-O3',
     ],
   }, # target_defaults
   'targets': [

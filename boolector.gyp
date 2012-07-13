@@ -31,17 +31,26 @@
 
 {
   'variables': {
-    'use_precosat': 1,
+    # martignlo: disabled precosat since it does not yet support serilization
+    # 'use_precosat': 1,
+    'use_precosat': 0,
   },
   'target_defaults': {
     'cflags': [
       '-Wall',
+      # TODO(bucur): Take it out into a conditional block, or remove it
+      # when becoming static.
+      '-fPIC',
+      '-O3',
+    ],
+    'ldflags': [
+      '-fPIC',
     ],
   }, # target_defaults
   'targets': [
     {
       'target_name': 'libboolector',
-      'type': 'static_library',
+      'type': 'shared_library',
       'sources': [
         'boolector.c',
         'boolector.h',
